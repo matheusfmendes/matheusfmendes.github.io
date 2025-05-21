@@ -82,27 +82,6 @@ a:focus {
   border-bottom-color: var(--color-link);
 }
 
-/* botão toggle no header */
-#theme-toggle {
-  background: none;
-  border: 2px solid var(--color-link);
-  color: var(--color-link);
-  cursor: pointer;
-  font-size: 1.4rem;
-  padding: 0.2rem 0.8rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin-left: 1rem;
-  user-select: none;
-}
-
-#theme-toggle:hover,
-#theme-toggle:focus {
-  background-color: var(--color-link);
-  color: var(--color-bg);
-  outline: none;
-}
-
 .main-content .section {
   background-color: var(--color-bg-section);
   margin-bottom: 2.5rem;
@@ -152,17 +131,6 @@ ul li::before {
   color: #8b949e;
   user-select: none;
   transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-/* tema claro */
-body.light {
-  --color-bg: #f9fafb;
-  --color-bg-section: #ffffff;
-  --color-text: #222222;
-  --color-link: #0066cc;
-  --color-link-hover: #004999;
-  --color-border: #ddd;
-  --color-shadow: rgba(0, 0, 0, 0.1);
 }
 
 /* Scroll suave para âncoras */
