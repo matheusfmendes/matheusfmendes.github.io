@@ -2,43 +2,46 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Matheus Mendes • Fullstack Dev</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
-    <div class="container">
+    <div class="container header-container">
       <h1>Matheus Mendes</h1>
-      <p>Desenvolvedor Fullstack | Embaixador DIO</p>
-      <nav>
+      <p class="subtitle">Desenvolvedor Fullstack | Embaixador DIO</p>
+      <nav class="nav-menu">
         <a href="#skills">Skills</a>
         <a href="#certs">Certificações</a>
         <a href="#contact">Contato</a>
       </nav>
+      <!-- Botão toggle -->
+      <button id="theme-toggle" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">🌙</button>
     </div>
   </header>
 
-  <section class="about">
-    <div class="container">
+  <main class="container main-content">
+    <section class="about section">
       <h2>Sobre Mim</h2>
-      <p>Bacharel em Sistemas de Informação, apaixonado por tecnologia, automações e soluções eficientes. Atualmente atuo como Fullstack Developer e sou embaixador na <a href="https://web.dio.me" target="_blank">DIO</a>.</p>
-    </div>
-  </section>
+      <p>
+        Bacharel em Sistemas de Informação, apaixonado por tecnologia, automações e soluções eficientes.
+        Atualmente atuo como Fullstack Developer e sou embaixador na
+        <a href="https://web.dio.me" target="_blank" rel="noopener noreferrer">DIO</a>.
+      </p>
+    </section>
 
-  <section id="skills" class="skills">
-    <div class="container">
+    <section id="skills" class="skills section">
       <h2>💻 Tecnologias</h2>
       <ul>
         <li>Python, PHP, Java, C/C++</li>
         <li>JavaScript, Vue.js, jQuery, HTML, CSS, Bootstrap</li>
         <li>MySQL, SQL, Docker, Git, Linux, Regex</li>
       </ul>
-    </div>
-  </section>
+    </section>
 
-  <section id="certs" class="certs">
-    <div class="container">
+    <section id="certs" class="certs section">
       <h2>📜 Certificações</h2>
       <ul>
         <li>Embaixador DIO</li>
@@ -47,24 +50,21 @@
         <li>Extensão em Machine Learning (Unopar Anhanguera – 40h – Abr/2025)</li>
         <li>Scrum Fundamentals Certified (SFC™)</li>
       </ul>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
+    <section id="contact" class="contact section">
       <h2>📬 Contato</h2>
-      <p>Email: <a href="mailto:matheus121968@hotmail.com">matheus121968@hotmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/matheusfmendes" target="_blank">github.com/matheusfmendes</a></p>
-      <p>Portfólio: <a href="http://matheusfmendes.github.io" target="_blank">matheusfmendes.github.io</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/matheusfmendes/" target="_blank">linkedin.com/in/matheusfmendes</a></p>
-    </div>
-  </section>
+      <p>GitHub: <a href="https://github.com/matheusfmendes" target="_blank" rel="noopener noreferrer">github.com/matheusfmendes</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/matheusfmendes/" target="_blank" rel="noopener noreferrer">linkedin.com/in/matheusfmendes</a></p>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
       <p>© 2025 Matheus Mendes • Todos os direitos reservados</p>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
