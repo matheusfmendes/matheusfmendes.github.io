@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Sistema de Gestão de Membros</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-slate-900">⛪ SGM</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-slate-600 hover:text-slate-900 transition-colors">Funcionalidades</a>
+                <a href="#demo" class="text-slate-600 hover:text-slate-900 transition-colors">Demonstração</a>
+                <a href="#tech" class="text-slate-600 hover:text-slate-900 transition-colors">Tecnologias</a>
+                <a href="#gallery" class="text-slate-600 hover:text-slate-900 transition-colors">Galeria</a>
+            </div>
+             <div class="md:hidden">
+                <select id="mobile-nav" class="bg-white border border-slate-300 rounded-md p-2 text-slate-600">
+                    <option value="#">Menu</option>
+                    <option value="#features">Funcionalidades</option>
+                    <option value="#demo">Demonstração</option>
+                    <option value="#tech">Tecnologias</option>
+                    <option value="#gallery">Galeria</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-16">
+
+        <section id="hero" class="text-center mb-16 md:mb-24">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Sistema de Gerenciamento de Membros da Igreja</h2>
+            <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                Uma aplicação web completa para otimizar a administração e o engajamento de membros, oferecendo uma plataforma segura e intuitiva para gerenciar informações, facilitar a comunicação e capacitar administradores.
+            </p>
+        </section>
+
+        <section id="features" class="mb-16 md:mb-24">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-slate-900 mb-2">Principais Funcionalidades</h3>
+                <p class="text-slate-600 max-w-2xl mx-auto">Esta seção detalha os recursos essenciais que tornam o sistema uma ferramenta poderosa para a gestão da igreja. Cada funcionalidade foi projetada com foco na usabilidade e segurança.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h4 class="font-bold text-xl mb-2">Autenticação Segura</h4>
+                    <p class="text-slate-600">Sistema robusto de login e cadastro com recuperação de senha por e-mail para garantir o acesso seguro dos usuários.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h4 class="font-bold text-xl mb-2">Cadastro de Membros</h4>
+                    <p class="text-slate-600">Formulário intuitivo para novos membros, capturando detalhes essenciais, incluindo foto de perfil e endereço com integração de CEP.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h4 class="font-bold text-xl mb-2">Gerenciamento de Perfil</h4>
+                    <p class="text-slate-600">Páginas de perfil dedicadas onde os membros podem visualizar e atualizar suas informações pessoais a qualquer momento.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h4 class="font-bold text-xl mb-2">Painel Administrativo</h4>
+                    <p class="text-slate-600">Um painel de controle completo para administradores com listagem, busca e paginação de todos os membros.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h4 class="font-bold text-xl mb-2">Visualização de Fotos</h4>
+                    <p class="text-slate-600">Visualize as fotos dos membros diretamente na lista do painel, com uma opção de zoom para ver detalhes.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h4 class="font-bold text-xl mb-2">Integração com Firebase</h4>
+                    <p class="text-slate-600">Uso completo do ecossistema Firebase para autenticação, banco de dados em tempo real (Firestore) e armazenamento de arquivos (Storage).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="mb-16 md:mb-24">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-slate-900 mb-2">Demonstração Interativa</h3>
+                <p class="text-slate-600 max-w-2xl mx-auto">Experimente uma simulação do painel administrativo. Você pode buscar por um nome ou navegar pelas páginas para ver como a listagem de membros funciona. O gráfico abaixo também demonstra o potencial de visualização de dados do sistema.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-xl p-4 md:p-8">
+                <div class="grid lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-2 flex flex-col justify-center">
+                         <div class="mb-8">
+                            <label for="search-demo" class="block text-sm font-medium text-slate-700 mb-1">Buscar Membro</label>
+                            <div class="flex">
+                                <input type="text" id="search-demo" class="w-full rounded-l-md border-slate-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Ex: Ana">
+                                <button id="search-button-demo" class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700">Buscar</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="membersChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-3">
+                        <h4 class="font-bold text-xl mb-4 text-slate-800">Lista de Membros (Simulação)</h4>
+                        <div id="members-list-demo" class="space-y-3 pr-2 overflow-y-auto" style="max-height: 400px;">
+                            </div>
+                        <div class="mt-6 flex justify-between items-center">
+                             <button id="prev-page-demo" class="bg-slate-200 text-slate-700 px-4 py-2 rounded-md hover:bg-slate-300 disabled:opacity-50 disabled:cursor-not-allowed">Anterior</button>
+                             <span id="page-info-demo" class="text-slate-600 font-medium"></span>
+                             <button id="next-page-demo" class="bg-slate-200 text-slate-700 px-4 py-2 rounded-md hover:bg-slate-300 disabled:opacity-50 disabled:cursor-not-allowed">Próxima</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="tech" class="mb-16 md:mb-24">
+             <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-slate-900 mb-2">Tecnologias Utilizadas</h3>
+                 <p class="text-slate-600 max-w-2xl mx-auto">Este projeto foi construído com tecnologias modernas e robustas, garantindo uma aplicação escalável, segura e de alta performance. A escolha do Firebase como backend simplificou o desenvolvimento e permitiu a entrega de recursos em tempo real.</p>
+            </div>
+            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-5xl mb-2">H5</p>
+                    <p class="font-bold text-slate-700">HTML5</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-5xl mb-2">C3</p>
+                    <p class="font-bold text-slate-700">CSS3</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-5xl mb-2">JS</p>
+                    <p class="font-bold text-slate-700">JavaScript</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-5xl mb-2">FB</p>
+                    <p class="font-bold text-slate-700">Firebase</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-slate-900 mb-2">Galeria de Telas</h3>
+                <p class="text-slate-600 max-w-2xl mx-auto">Explore as imagens abaixo para ter uma visão clara da interface do usuário em diferentes partes do sistema. As telas demonstram a simplicidade e a coesão visual do design, desde o login até o gerenciamento de perfis.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <div class="space-y-2">
+                    <h4 class="font-bold text-center text-slate-700">Login & Cadastro</h4>
+                    <img src="C:\Users\mathe\Downloads\11.jpg" alt="Tela de Login" class="rounded-lg shadow-lg w-full">
+                    <img src="https://placehold.co/600x400/cbd5e1/1e293b?text=Tela+de+Cadastro%0A%0ANome+Completo%3A%0A%5B____________________%5D%0AEmail%3A%0A%5B____________________%5D%0ASenha%3A%0A%5B____________________%5D%0AConfirmar+Senha%3A%0A%5B____________________%5D%0A%5B+Cadastrar+%5D%0A%0AJá+tem+conta%3F+Faça+login" alt="Tela de Cadastro" class="rounded-lg shadow-lg w-full">
+                 </div>
+                 <div class="space-y-2">
+                    <h4 class="font-bold text-center text-slate-700">Painel & Perfil</h4>
+                    <img src="https://placehold.co/600x400/cbd5e1/1e293b?text=Painel+Administrativo%0A%0A%5BBuscar+por+nome...%5D+%5BBuscar%5D%0A%0A--+Lista+de+Membros+--%0A%5BImg%5D+Ana+Silva+-+ana%40ex.com+-+%5BEditar%5D%0A%5BImg%5D+Bruno+Lopes+-+bruno%40ex.com+-+%5BEditar%5D%0A%5BImg%5D+Carlos+Dias+-+carlos%40ex.com+-+%5BEditar%5D%0A%0A%5B%3C+Pág+Anterior%5D+%5BPróx+Pág+%3E%5D" alt="Painel do Administrador" class="rounded-lg shadow-lg w-full">
+                    <img src="https://placehold.co/600x400/cbd5e1/1e293b?text=Perfil+do+Usuário%0A%0A%5B++++Foto++++%5D%0A%5BUpload+Nova+Foto%5D%0A%0ANome%3A+Maria+Oliveira%0AEmail%3A+maria.o%40ex.com%0AEndereço%3A+Rua+Exemplo%2C+123%0ATelefone%3A+(11)+98765-4321%0A%0A%5B+Salvar+Alterações+%5D+%5BCancelar%5D" alt="Perfil do Usuário" class="rounded-lg shadow-lg w-full">
+                 </div>
+                 <div class="space-y-2 md:col-span-2 lg:col-span-1">
+                    <h4 class="font-bold text-center text-slate-700">Recuperação de Senha</h4>
+                    <img src="https://placehold.co/600x400/cbd5e1/1e293b?text=Recuperar+Senha%0A%0ADigite+seu+email+para+recuperação%3A%0A%5B____________________%5D%0A%0A%5B+Enviar+Email+de+Recuperação+%5D%0A%0A%5BVoltar+ao+Login%5D" alt="Tela de Recuperação de Senha" class="rounded-lg shadow-lg w-full">
+                 </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300 mt-16 md:mt-24">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2024. Desenvolvido como um projeto de portfólio.</p>
+            <p class="text-sm text-slate-400 mt-2">Este é um projeto de demonstração. Os dados são fictícios.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const mobileNav = document.getElementById('mobile-nav');
+            if (mobileNav) {
+                mobileNav.addEventListener('change', (e) => {
+                    const targetId = e.target.value;
+                    if (targetId && targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                    mobileNav.value = '#';
+                });
+            }
+
+            const allMembers = [
+                { name: 'João da Silva', email: 'joao.silva@example.com', photo: 'https://placehold.co/40x40/a3e635/1c1917?text=JS' },
+                { name: 'Maria Oliveira', email: 'maria.oliveira@example.com', photo: 'https://placehold.co/40x40/f9a8d4/1c1917?text=MO' },
+                { name: 'Pedro Souza', email: 'pedro.souza@example.com', photo: 'https://placehold.co/40x40/67e8f9/1c1917?text=PS' },
+                { name: 'Ana Costa', email: 'ana.costa@example.com', photo: 'https://placehold.co/40x40/fde047/1c1917?text=AC' },
+                { name: 'Lucas Pereira', email: 'lucas.pereira@example.com', photo: 'https://placehold.co/40x40/f97316/1c1917?text=LP' },
+                { name: 'Juliana Ferreira', email: 'juliana.ferreira@example.com', photo: 'https://placehold.co/40x40/a78bfa/1c1917?text=JF' },
+                { name: 'Marcos Almeida', email: 'marcos.almeida@example.com', photo: 'https://placehold.co/40x40/34d399/1c1917?text=MA' },
+                { name: 'Beatriz Santos', email: 'beatriz.santos@example.com', photo: 'https://placehold.co/40x40/fbbf24/1c1917?text=BS' },
+                { name: 'Carlos Lima', email: 'carlos.lima@example.com', photo: 'https://placehold.co/40x40/f87171/1c1917?text=CL' },
+                { name: 'Fernanda Martins', email: 'fernanda.martins@example.com', photo: 'https://placehold.co/40x40/818cf8/1c1917?text=FM' },
+            ];
+
+            let currentPage = 1;
+            const itemsPerPage = 4;
+            let currentFilter = '';
+
+            const membersListDemo = document.getElementById('members-list-demo');
+            const searchInput = document.getElementById('search-demo');
+            const searchButton = document.getElementById('search-button-demo');
+            const prevButton = document.getElementById('prev-page-demo');
+            const nextButton = document.getElementById('next-page-demo');
+            const pageInfo = document.getElementById('page-info-demo');
+            
+            function renderMembers() {
+                if (!membersListDemo) return;
+
+                const filteredMembers = allMembers.filter(m => m.name.toLowerCase().includes(currentFilter.toLowerCase()));
+                const totalPages = Math.ceil(filteredMembers.length / itemsPerPage);
+                
+                if (currentPage > totalPages && totalPages > 0) {
+                    currentPage = totalPages;
+                }
+                if (currentPage < 1) {
+                    currentPage = 1;
+                }
+                
+                const start = (currentPage - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                const paginatedMembers = filteredMembers.slice(start, end);
+
+                membersListDemo.innerHTML = '';
+                if (paginatedMembers.length === 0) {
+                    membersListDemo.innerHTML = '<p class="text-slate-500 text-center">Nenhum membro encontrado.</p>';
+                } else {
+                    paginatedMembers.forEach(member => {
+                        const memberElement = document.createElement('div');
+                        memberElement.className = 'flex items-center bg-slate-50 p-3 rounded-lg border border-slate-200';
+                        memberElement.innerHTML = `
+                            <img src="${member.photo}" alt="Foto de ${member.name}" class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <p class="font-semibold text-slate-800">${member.name}</p>
+                                <p class="text-sm text-slate-500">${member.email}</p>
+                            </div>
+                        `;
+                        membersListDemo.appendChild(memberElement);
+                    });
+                }
+                
+                pageInfo.textContent = `Página ${totalPages > 0 ? currentPage : 0} de ${totalPages}`;
+                prevButton.disabled = currentPage <= 1;
+                nextButton.disabled = currentPage >= totalPages;
+            }
+
+            searchButton.addEventListener('click', () => {
+                currentFilter = searchInput.value;
+                currentPage = 1;
+                renderMembers();
+            });
+
+            searchInput.addEventListener('keypress', (e) => {
+                if(e.key === 'Enter') {
+                    searchButton.click();
+                }
+            })
+
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderMembers();
+                }
+            });
+
+            nextButton.addEventListener('click', () => {
+                const filteredMembers = allMembers.filter(m => m.name.toLowerCase().includes(currentFilter.toLowerCase()));
+                const totalPages = Math.ceil(filteredMembers.length / itemsPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderMembers();
+                }
+            });
+
+            const ctx = document.getElementById('membersChart').getContext('2d');
+            const membersChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+                    datasets: [{
+                        label: 'Novos Membros por Mês',
+                        data: [5, 8, 12, 7, 10, 15],
+                        backgroundColor: 'rgba(59, 130, 246, 0.5)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                           display: true,
+                           text: 'Crescimento de Membros (Simulação)'
+                        }
+                    }
+                }
+            });
+            
+            renderMembers();
+        });
+    </script>
+</body>
+</html>
