@@ -11,7 +11,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Mensagem de boas-vindas no console
+// Mensagem de boas-vindas no console.
 console.log("%cOlá! Obrigado por visitar meu portfólio. 🚀", "color: #58a6ff; font-size: 16px;");
 
 const track = document.querySelector('.carousel-track');
